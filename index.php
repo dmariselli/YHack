@@ -139,7 +139,8 @@
 				// mysql_close($link);
 			?>
 	    };
-
+  </script>
+  <script id="movie element" class="movie element lighter">
 	    var generateMovieElement = function(uid,title,year,image_url){
 	    var wrapper;
 	    // Create wrappers
@@ -167,7 +168,6 @@
 		};
 
 		movieinit();
-		generateMovieElement();
 		google.maps.event.addDomListener(window, 'load', initialize);
 
 	</script>
