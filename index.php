@@ -31,8 +31,8 @@
           <ul class="nav navbar-nav" id="main-menu">
             <li><a href="#page-welcome">Home</a></li>
             <li><a href="#page-about">About</a></li>
-            <li><a href="#page-resume">Movie</a></li>
-            <li><a href="#page-contact">Rating</a></li>
+            <li><a href="#page-movie">Movie</a></li>
+            <li><a href="#page-rating">Rating</a></li>
           </ul>
         </div>
       </div>
@@ -40,17 +40,39 @@
 
 <!-- TITLE -->
 	<section id="page-welcome" class="page-welcome">
-	  <div>
-	    </div>
-	    <div class="container">
-	        <div class="row">
-	            <header class="centering">
-	                <h1>Movie Night</h1>
-	                <p>Your source for 看电影!</p>
-	            </header>
-	       </div>
-	    </div>
+		<div>
+		</div>
+		<div class="container">
+		    <div class="row">
+		        <header class="centering">
+		            <h1>Movie Night</h1>
+		            <p>Your source for 看电影!</p>
+		        </header>
+		   </div>
+		</div>
 	</section>
+
+<!-- Movie Thing -->
+
+	<section id="page-about" class="page-about lighter">
+		<div class="lighter margin"></div>
+		</div>
+		<div class="container">
+			<header class="section-header">
+	            <h2><span>About</span></h2>
+	            <p>We made this</p>
+	    	</header>
+	    <div class="row">
+               <div class="col-md-9">
+               	<h2><strong>Who We Are</strong></h2>
+                <p>Amherst College sophomores</p>
+                <h2><strong>Why We Do Things</strong></h2>
+               	<p class="small-text">Why Not</p>
+              </div>
+            </div>
+      </div>
+
+
 
 
 		<script src="js/bootstrap.min.js"></script>
