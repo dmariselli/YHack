@@ -34,10 +34,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav" id="main-menu">
-            <li><a href="#page-welcome">Home</a></li>
-            <li><a href="#page-map">Map</a></li>
-            <li><a href="#page-movie">Movie</a></li>
-            <li><a href="#page-about">About</a></li>
+            <li><a href="#page-welcome" class="scroll">Home</a></li>
+            <li><a href="#page-map" class="scroll">Map</a></li>
+            <li><a href="#page-movie" class="scroll">Movie</a></li>
+            <li><a href="#page-about" class="scroll">About</a></li>
           </ul>
         </div>
       </div>
@@ -99,6 +99,8 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuyBDatAQMaLRJ11BuSOc1OjFZHs6-U3U">
     </script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+	<script type="text/javascript" src="js/maps.js"></script>
+	<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
 
 	<script>
 
@@ -167,8 +169,6 @@
 		google.maps.event.addDomListener(window, 'load', initialize);
 
 	</script>
-
-	<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
 	
 	</body>
 </html>
