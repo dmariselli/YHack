@@ -13,10 +13,11 @@
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="icon" type="image/png" href="img/icon.jpg">
 	</head>
 	<body>
 
-
+<!-- NAVBAR -->
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -34,9 +35,23 @@
             <li><a href="#page-resume">Movie</a></li>
             <li><a href="#page-contact">Rating</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>
+
+<!-- TITLE -->
+	<section id="page-welcome" class="page-welcome">
+	  <div>
+	    </div>
+	    <div class="container">
+	        <div class="row">
+	            <header class="centering">
+	                <h1>Movie Night</h1>
+	                <p>Your source for 看电影!</p>
+	            </header>
+	       </div>
+	    </div>
+	</section>
 
 
 		<script src="js/bootstrap.min.js"></script>
