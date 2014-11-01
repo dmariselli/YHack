@@ -35,9 +35,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav" id="main-menu">
             <li><a href="#page-welcome">Home</a></li>
-            <li><a href="#page-about">About</a></li>
+            <li><a href="#page-map">Map</a></li>
             <li><a href="#page-movie">Movie</a></li>
-            <li><a href="#page-rating">Rating</a></li>
+            <li><a href="#page-about">About</a></li>
           </ul>
         </div>
       </div>
@@ -59,15 +59,20 @@
 	</section>
 
 <!-- MAP -->
-	<section id="map" class"map"></section>
+	<section id="page-map" class"page-map"></section>
 		<div cass="container"></div>
 			<h1>Movie Night</h1>
             <p>Your source for 看电影!</p>
 			<div id="map-canvas"></div>
 
+<!-- Movie Data -->
+	<section id="page-movie" class="page-movie darker">
 
-<!-- Movie Thing -->
+    	<div class="movie-list" id="suggestions"></div>
 
+    </section>
+
+<!-- About -->
 	<section id="page-about" class="page-about lighter">
 		<div class="lighter margin"></div>
 		</div>
@@ -86,14 +91,6 @@
         	</div>
         </div>
   	</section>
-
-<!-- Movie Data -->
-	<section id="page-movie" class="page-movie darker">
-
-    	<div class="movie-list" id="suggestions"></div>
-
-    </section>
-
     
     <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="js/jquery.ui.min.js"></script>
@@ -257,5 +254,7 @@
 
 	</script>
 
+	<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+	
 	</body>
 </html>
