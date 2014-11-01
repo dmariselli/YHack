@@ -128,8 +128,9 @@
 
         map = new google.maps.Map(document.getElementById('map-canvas'), {
             center: location,
-            zoom: 15
+            zoom: 13
           });
+        map.setOptions({'scrollwheel': false});
         var request = {
           location: location,
           radius: '500',
