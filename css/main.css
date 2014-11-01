@@ -63,6 +63,11 @@ html, body {
     float:none;
     font-size: 1em;
     font-weight: bold;
+    color: red;
+}
+
+.navbar-default .navbar-nav>li>a {
+color: #03B89B;
 }
 
 .navbar-default .navbar-nav>li>a:hover, 
@@ -74,4 +79,11 @@ background-color: transparent;
 .navbar-default .navbar-nav>.active>a:hover, 
 .navbar-default .navbar-nav>.active>a:focus {
     background: none;
+}
+
+a:link,a:visited,.navbar-default .navbar-nav>li>a:hover, 
+.navbar-default .navbar-nav>li>a:focus,a:hover,a:active,.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a:focus{
+    color:#3498db;
 }
