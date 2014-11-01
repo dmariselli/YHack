@@ -5,7 +5,6 @@ html, body {
     width: 100%;
     font-family: 'Oxygen', 'Source Sans Pro', Arial, Helvetica;
     /*color:#757575;*/
-    background-color: #222
 }
 
 .lighter{
@@ -24,11 +23,12 @@ html, body {
     position: relative;
     overflow: hidden;
     text-align: center;
+    background-image:url(../img/wallpaper.jpg)
 }
 
 #page-welcome header{
-    color:#05A120;
-    padding-top:20%;
+    color:white;
+    padding-top:50%;
 }
 
 #page-welcome header h1{

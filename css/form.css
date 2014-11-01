@@ -1,0 +1,130 @@
+/*@font-face{
+    font-family: "champagne";
+    src: url('fonts/Champagne.ttf');
+}*/
+
+body{
+    /* Override bootstrap properties */
+    /*background-image: url('images/background.png') !important;*/
+    border: 0 !important;
+}
+
+#container{
+    margin: auto;
+    width: 70%;
+    min-height: 100%;
+    background-color: transparent;
+    border: 0px;
+}
+
+#header{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 30px;
+    color: #34496E;
+    font-family: "champagne", verdana;
+    font-weight: bold;
+}
+
+#content{
+    margin-top: 30px;
+    width: 70%;
+    height: 550px;
+    padding-right: 10px;
+}
+
+#subheader{
+    text-align: left;
+    font-family: "champagne", verdana;
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 15px;
+    color: #34496E;
+    float: left;
+}
+
+.movie-list#suggestions{
+    width: 800px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    background-color: #C7D1D1;
+    /*min-height: 240px;*/
+    border-radius: 10px;
+    float: left;
+    clear: both;
+}
+
+.movie-item{
+    border-radius: 5px;
+    background-color: #FFFBFF;
+    width: 500px;
+    margin: 5px;
+    padding: 8px 8px 8px 8px;
+    float: left;
+}
+
+.comment-item{
+    width: 280px;
+    background-color: #C7D1D1;
+    border-radius: 5px;
+    margin: 0px;
+    padding-top: 5px;
+    float: right;
+}
+
+.movie-item > .movie-title{
+    font-weight: bold;
+    font-size: 22px;
+    font-family: champagne;
+    margin-top: 0px;
+    float: left;
+}
+
+.movie-item > .movie-author{
+    font-size: 20px;
+    font-family: champagne;
+    float: left;
+    clear: left;
+}
+
+.btn.btn-danger#deletebtn{
+    float: right;
+    clear: right;
+    margin-top: 80px;
+
+}
+
+.moviepic{
+    float: left;
+    clear: left;
+    padding-top: 8px;
+}
+
+#movie-form{
+    margin-left: 630px;
+    padding-top: 35px;
+    padding-left: 400px;
+    display: none;
+}
+
+#movie-form input, #movie-form textarea{
+    width: 240px;
+    margin: 1px 5px;
+}
+
+#movie-form input{
+    height: 30px;
+}
+
+.lonebutton{
+    margin: 0px;
+}
+
+.lonebutton#addnew{
+    float: right;
+    padding-right: 10px;
+}
+
+.lonebutton#clear{
+    float: right;
+}
