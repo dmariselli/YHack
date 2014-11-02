@@ -1,4 +1,4 @@
-var map;
+  var map;
   var service;
   var infowindow;
 
@@ -18,16 +18,27 @@ var map;
   
     var location = new google.maps.LatLng(lat,lng);
 
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
+    map = new google.maps.Map(document.getElementById('page-map'), {
         center: location,
         zoom: 13
       });
+
+// Not working, but would like to get to work
+    // var mapLabel = new MapLabel({
+    //    text: 'Testing',
+    //    position: location,
+    //    map: map,
+    //    fontSize: 1000,
+    //    align: 'center'
+    //  });
+
     map.setOptions({'scrollwheel': false});
     var request = {
       location: location,
       radius: '500',
       query: 'movie theatre'
     };
+
     service = new google.maps.places.PlacesService(map);
     service.textSearch(request, callback);
   }

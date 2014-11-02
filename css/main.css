@@ -7,7 +7,7 @@ html, body {
     /*color:#757575;*/
 }
 
-#map-canvas {
+#page-map {
     height: 100%; margin: 0; padding: 0;
 }
 
@@ -55,13 +55,99 @@ html, body {
     text-transform: uppercase;
 }
 
+/*Map*/
+
+#page-map{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+#page-map header{
+    color:black;
+    padding-top:20%;
+}
+
+#page-map header h1{
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1em;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+#page-map header p{
+    font-size: 2em;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 0 8px;
+    letter-spacing: 0.1em;
+    line-height: 3em;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+h2{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.movie-list{
+    background-color:#FFFFFF;
+    border:2px solid black;
+    padding: 4px;
+}
+.moviepic{
+    display:inline-block;
+    padding-top: 2px;
+}
+
+.movie-summary{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.moviepic:hover .movie-summary{
+    visibility: visible;
+    opacity:1;
+}
+/*.moviepic img{
+    height:100%;
+    width: 100%;
+}*/
+.movie-title{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.movie-year{
+    text-align: center;
+}
+.movie-item{
+    display:inline-block;
+    padding-left:4px;
+    padding-right:4px;
+}
+
 /* NAVBAR */
 .navbar{
     width:100%;
 }
 
 .navbar-default {
-    background: #ddd;
+    background: rgba(255, 255, 255, 0.85);
     border: none;
     color:#777;
     text-transform: uppercase;
