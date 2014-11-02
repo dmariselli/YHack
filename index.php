@@ -144,7 +144,6 @@
 	    };
 	    var generateMovieElement = function(uid,title,year,summary,image_url){
 	    var wrapper;
-      var sum;
 	    // Create wrappers
 	    wrapper = $("<div />", {
 	        "class" : "movie-item",
@@ -152,7 +151,7 @@
 	        "data" : uid
 	    }).appendTo("#suggestions");
 
-      sum=$("<div />", {
+      $("<div />", {
           "class" : "movie-summary",
           "text": summary
       }).appendTo(wrapper);

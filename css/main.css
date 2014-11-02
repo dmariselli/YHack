@@ -109,19 +109,18 @@ h2{
 
 .movie-summary{
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(29, 106, 154, 0.72);
-  color: #fff;
+  height:319px;
+  width:214px;
+  background-color: #FFFFFF;
+  /*color: #FFFFFF;*/
   visibility: hidden;
   opacity: 0;
 }
 
-.moviepic:hover .movie-summary{
+.movie-item:hover .movie-summary{
     visibility: visible;
     opacity:1;
+    /*color:black;*/
 }
 /*.moviepic img{
     height:100%;
