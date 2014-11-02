@@ -1,0 +1,182 @@
+<?php
+    require_once("mysql.php");
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Movie Club</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+		<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+		<link rel="icon" type="image/png" href="img/icon.jpg">
+
+	</head>
+	<body>
+
+<!-- NAVBAR -->
+	<div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" id="main-menu">
+            <li><a href="#page-welcome" class="scroll">Home</a></li>
+            <li><a href="#page-map" class="scroll">Map</a></li>
+            <li><a href="#page-movie" class="scroll">Movie</a></li>
+            <li><a href="#page-about" class="scroll">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- TITLE -->
+	<section id="page-welcome" class="page-welcome">
+		<div>
+		</div>
+		<div class="container">
+		    <div class="row">
+		        <header class="centering">
+		            <h1>Movie Night</h1>
+		            <p>Your source for 看电影!</p>
+
+		        </header>
+		   </div>
+		</div>
+	</section>
+
+<!-- MAP -->
+	<section id="page-map" class"page-map">
+	<!-- <section id = "test" class "test"> -->
+		<header class="centering">
+			<!-- <h1>Movie Night</h1>
+			<p>Your source for 看电影!</p> -->
+		</header>
+	</section>
+
+
+
+
+<!-- Movie Data -->
+	<section id="page-movie" class="page-movie darker">
+
+    	<div class="movie-list" id="suggestions"><h2>This weeks top movies</h2></div>
+
+    </section>
+
+<!-- About -->
+	<section id="page-about" class="page-about lighter">
+      <div class="lighter margin"></div>
+      <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">About</h2>
+                    <div class="spacer"></div>
+                    <p class="section-subtitle">Built by two Amherst College Students.</p>
+                </header>
+            <div class="row">
+               <div class="col-md-9">
+               	<h2><strong>Daniel Mariselli</strong></h2>
+                <p class="small-text">The Best Guy.</p>
+                <h2><strong>Alex Chou</strong></h2>
+               	<p class="small-text">Also pretty darn good.</p>
+              </div>
+            </div>
+      </div>
+    </section>
+    
+    <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuyBDatAQMaLRJ11BuSOc1OjFZHs6-U3U"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+	<script type="text/javascript" src="js/maps.js"></script>
+	<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+	<script src='http://google-maps-utility-library-v3.googlecode.com/svn/trunk/maplabel/src/maplabel-compiled.js'></script>
+
+	<script>
+
+		var movieinit = function(){
+	        <?php
+				$host = 'localhost';
+				$user = 'root';
+			    $link = mysql_connect($host, $user, '');
+				if (!$link) {
+				    die('Could not connect: ' . mysql_error());
+				}
+
+				$db = mysql_select_db("test", $link);
+				if (!$db) {
+				    die('Could not connect to db: ' . mysql_error());
+				}
+
+				$sql = "SELECT `uid`, `title`, `year`, `summary`, `image_url` FROM `movies`";
+				$result = mysql_query($sql);
+
+				if (mysql_num_rows($result) > 0) {
+				    // output data of each row
+				    while($row = mysql_fetch_assoc($result)) {
+				        $uid = $row['uid'];
+			            $title = $row['title'];
+			            $year = $row['year'];
+                  $summary=$row['summary'];
+			            $image_url = $row['image_url'];
+			            echo "generateMovieElement('".$uid."','".$title."','".$year."','".$summary."','".$image_url."');";
+				    }
+				} else {
+				    echo "0 results";
+				}
+
+				// mysql_close($link);
+			?>
+	    };
+	    var generateMovieElement = function(uid,title,year,summary,image_url){
+	    var wrapper;
+	    // Create wrappers
+	    wrapper = $("<div />", {
+	        "class" : "movie-item",
+	        "id" : "movie-" + uid,
+	        "data" : uid
+	    }).appendTo("#suggestions");
+
+      $("<div />", {
+          "class" : "movie-summary",
+          "text": summary
+      }).appendTo(wrapper);
+
+      // Add movie picture
+      $('<div class="moviepic"><img src="' + image_url +'" width=214 height=317 />').load(function()
+      {}).appendTo(wrapper);
+
+	    // Add movie title
+	    $("<div />", {
+	        "class" : "movie-title",
+	        "text": title
+	    }).appendTo(wrapper);
+
+	    // Add movie year
+	    $("<div />", {
+	        "class" : "movie-year",
+	        "text": year
+	    }).appendTo(wrapper);
+		  };
+
+		  movieinit();
+		  google.maps.event.addDomListener(window, 'load', initialize);
+
+	</script>
+	
+	</body>
+</html>
