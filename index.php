@@ -73,7 +73,7 @@
 <!-- Movie Data -->
 	<section id="page-movie" class="page-movie darker">
 
-    	<div class="movie-list" id="suggestions"></div>
+    	<div class="movie-list" id="suggestions"><h2>This weeks top movies</h2></div>
 
     </section>
 
@@ -122,7 +122,7 @@
 				    die('Could not connect to db: ' . mysql_error());
 				}
 
-				$sql = "SELECT `uid`, `title`, `year`, `image_url` FROM `movies`";
+				$sql = "SELECT `uid`, `title`, `year`, `summary`, `image_url` FROM `movies`";
 				$result = mysql_query($sql);
 
 				if (mysql_num_rows($result) > 0) {
@@ -131,8 +131,9 @@
 				        $uid = $row['uid'];
 			            $title = $row['title'];
 			            $year = $row['year'];
+                  $summary=$row['summary'];
 			            $image_url = $row['image_url'];
-			            echo "generateMovieElement('".$uid."','".$title."','".$year."','".$image_url."');";
+			            echo "generateMovieElement('".$uid."','".$title."','".$year."','".$summary."','".$image_url."');";
 				    }
 				} else {
 				    echo "0 results";
@@ -141,16 +142,24 @@
 				// mysql_close($link);
 			?>
 	    };
-  </script>
-  <script id="movie element" class="movie element lighter">
-	    var generateMovieElement = function(uid,title,year,image_url){
+	    var generateMovieElement = function(uid,title,year,summary,image_url){
 	    var wrapper;
+      var sum;
 	    // Create wrappers
 	    wrapper = $("<div />", {
 	        "class" : "movie-item",
 	        "id" : "movie-" + uid,
 	        "data" : uid
 	    }).appendTo("#suggestions");
+
+      sum=$("<div />", {
+          "class" : "movie-summary",
+          "text": summary
+      }).appendTo(wrapper);
+
+      // Add movie picture
+      $('<div class="moviepic"><img src="' + image_url +'" width=214 height=317 />').load(function()
+      {}).appendTo(wrapper);
 
 	    // Add movie title
 	    $("<div />", {
@@ -163,14 +172,10 @@
 	        "class" : "movie-year",
 	        "text": year
 	    }).appendTo(wrapper);
+		  };
 
-	    // Add movie picture
-	    $('<div class="moviepic"><img src="' + image_url +'" width=100 height=100 />').load(function()
-	    {}).appendTo(wrapper);
-		};
-
-		movieinit();
-		google.maps.event.addDomListener(window, 'load', initialize);
+		  movieinit();
+		  google.maps.event.addDomListener(window, 'load', initialize);
 
 	</script>
 	
