@@ -59,11 +59,16 @@
 	</section>
 
 <!-- MAP -->
-	<section id="page-map" class"page-map"></section>
-		<div cass="container"></div>
-			<h1>Movie Night</h1>
-            <p>Your source for 看电影!</p>
-			<div id="map-canvas"></div>
+	<section id="page-map" class"page-map">
+	<!-- <section id = "test" class "test"> -->
+		<header class="centering">
+			<!-- <h1>Movie Night</h1>
+			<p>Your source for 看电影!</p> -->
+		</header>
+	</section>
+
+
+
 
 <!-- Movie Data -->
 	<section id="page-movie" class="page-movie darker">
@@ -74,33 +79,32 @@
 
 <!-- About -->
 	<section id="page-about" class="page-about lighter">
-		<div class="lighter margin"></div>
-		</div>
-		<div class="container">
-			<header class="section-header">
-	            <h2><span>About</span></h2>
-	            <p>We made this</p>
-	    	</header>
-		    <div class="row">
-	            <div class="col-md-9">
-						<h2><strong>Who We Are</strong></h2>
-						<p>Amherst College sophomores</p>
-						<h2><strong>Why We Do Things</strong></h2>
-						<p class="small-text">Why Not</p>
-	            </div>
-        	</div>
-        </div>
-  	</section>
+      <div class="lighter margin"></div>
+      <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">About</h2>
+                    <div class="spacer"></div>
+                    <p class="section-subtitle">Built by two Amherst College Students.</p>
+                </header>
+            <div class="row">
+               <div class="col-md-9">
+               	<h2><strong>Daniel Mariselli</strong></h2>
+                <p class="small-text">The Best Guy.</p>
+                <h2><strong>Alex Chou</strong></h2>
+               	<p class="small-text">Also pretty darn good.</p>
+              </div>
+            </div>
+      </div>
+    </section>
     
     <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="js/jquery.ui.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuyBDatAQMaLRJ11BuSOc1OjFZHs6-U3U">
-    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuyBDatAQMaLRJ11BuSOc1OjFZHs6-U3U"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 	<script type="text/javascript" src="js/maps.js"></script>
 	<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+	<script src='http://google-maps-utility-library-v3.googlecode.com/svn/trunk/maplabel/src/maplabel-compiled.js'></script>
 
 	<script>
 
